@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Vartika Singh - Agricultural & Sustainability Research</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header .subtitle {
+            font-size: 1.3em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .header .contact-links {
+            margin-top: 20px;
+        }
+        
+        .header .contact-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 25px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .header .contact-links a:hover {
+            background: white;
+            color: #2c3e50;
+        }
+        
+        nav {
+            background: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            text-align: center;
+        }
+        
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+        
+        nav ul li a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
+        
+        nav ul li a:hover {
+            color: #3498db;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+        
+        .highlights {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .highlights h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .highlights ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .highlights ul li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .highlights ul li:before {
+            content: "▸";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+        
+        .experience-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+        
+        .experience-item h3 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        
+        .experience-item .organization {
+            color: #3498db;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        
+        .experience-item .period {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .publication-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+        
+        .publication-item:hover {
+            transform: translateX(5px);
+            background: #e9ecef;
+        }
+        
+        .publication-item .pub-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1.05em;
+        }
+        
+        .publication-item .pub-authors {
+            color: #555;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+        }
+        
+        .publication-item .pub-venue {
+            color: #7f8c8d;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+        
+        .publication-item a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        
+        .publication-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid #3498db;
+        }
+        
+        .skill-category h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category ul li {
+            padding: 5px 0;
+            color: #555;
+        }
+        
+        .awards-list {
+            margin-top: 20px;
+        }
+        
+        .award-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .award-item h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .award-item .year {
+            color: #3498db;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            
+            .container {
+                padding: 30px 15px;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Dr. Vartika Singh, PhD</h1>
+        <p class="subtitle">Agricultural Economist | Sustainability Research | Food Systems Expert</p>
+        <div class="contact-links">
+            <a href="mailto:vartika.singh@cgiar.org">Email Me</a>
+            <a href="https://sites.google.com/view/vartikasingh27?pli=1" target="_blank">Google Scholar</a>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#awards">Awards</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I am a Senior Research Analyst at the International Food Policy Research Institute (IFPRI) and a PhD candidate at Humboldt University of Berlin, specializing in sustainable food systems transformation, agricultural economics, and environmental policy.</p>
+                    <p style="margin-top: 15px;">My research focuses on the food-water-land nexus, exploring pathways to achieve sustainable development goals while ensuring food security and environmental sustainability in India and South Asia.</p>
+                </div>
+                <div class="highlights">
+                    <h3>Research Focus</h3>
+                    <ul>
+                        <li>Sustainable food systems transformation</li>
+                        <li>Agricultural water management</li>
+                        <li>Climate change adaptation</li>
+                        <li>Food-water-land nexus modeling</li>
+                        <li>Agricultural policy analysis</li>
+                        <li>Development economics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience" class="section">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>Senior Research Analyst</h3>
+                <div class="organization">International Food Policy Research Institute (IFPRI), New Delhi</div>
+                <div class="period">2017 – Present</div>
+                <p>Leading research on sustainable food systems, agricultural policy, and environmental sustainability in South Asia.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Guest Scientist</h3>
+                <div class="organization">Potsdam Institute for Climate Impact Research (PIK), Germany</div>
+                <div class="period">2020 – Present</div>
+                <p>Collaborating on integrated assessment modeling for climate-food-water systems.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Senior Research Officer</h3>
+                <div class="organization">Indian Institute of Management, Ahmedabad</div>
+                <div class="period">2019 – 2024</div>
+                <p>Conducted advanced research on agricultural systems and sustainability transitions.</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>Research and Training Manager</h3>
+                <div class="organization">Evidence for Policy Design (EPoD), Harvard Kennedy School, India</div>
+                <div class="period">2015 – 2017</div>
+                <p>Managed research projects and training programs on evidence-based policy making in agriculture.</p>
+            </div>
+        </section>
+        
+        <section id="research" class="section">
+            <h2>Current Research</h2>
+            <div class="about-text">
+                <h3 style="color: #2c3e50; margin-bottom: 10px;">PhD Dissertation</h3>
+                <p><strong>Title:</strong> Pathways to Sustainable Transformation in India by 2050: A Food-Water-Land Nexus Approach</p>
+                <p style="margin-top: 10px;"><strong>Institution:</strong> Faculty of Life Sciences, Humboldt University of Berlin</p>
+                <p style="margin-top: 10px;"><strong>Expected Completion:</strong> June 2025</p>
+                <p style="margin-top: 15px;">My dissertation explores integrated approaches to achieving sustainable development in India through modeling the complex interactions between food systems, water resources, and land use.</p>
+            </div>
+            
+            <div class="skills-grid" style="margin-top: 30px;">
+                <div class="skill-category">
+                    <h3>Research Expertise</h3>
+                    <ul>
+                        <li>Integrated Assessment Modeling</li>
+                        <li>Agricultural Economics</li>
+                        <li>Environmental Policy</li>
+                        <li>Food Security Analysis</li>
+                        <li>Water Resource Management</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>Stata</li>
+                        <li>R Programming</li>
+                        <li>GAMS</li>
+                        <li>GitHub</li>
+                        <li>SurveyCTO</li>
+                        <li>LaTeX</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="publications" class="section">
+            <h2>Selected Publications</h2>
+            
+            <div class="publication-item">
+                <div class="pub-title">A comparison of the effects of local and EAT-Lancet dietary recommendations on selected economic and environmental outcomes in India</div>
+                <div class="pub-authors">Vartika Singh, Miodrag Stevanovic, et al.</div>
+                <div class="pub-venue">Food Policy, 2025</div>
+                <a href="https://doi.org/10.1016/j.foodpol.2025.102898" target="_blank">View Publication →</a>
+            </div>
+            
+            <div class="publication-item">
+                <div class="pub-title">Ending groundwater overdraft without affecting food security</div>
+                <div class="pub-authors">Perez, Nicostrato, Vartika Singh, Claudia Ringler, et al.</div>
+                <div class="pub-venue">Nature Sustainability, 2024</div>
+                <a href="https://doi.org/10.1038/s41893-024-01376-w" target="_blank">View Publication →</a>
+            </div>
+            
+            <div class="publication-item">
+                <div class="pub-title">Assessing policy options for sustainable water use in India's cereal production system</div>
+                <div class="pub-authors">Singh, Vartika, Miodrag Stevanovic, Chandan Kumar Jha, et al.</div>
+                <div class="pub-venue">Environmental Research Letters, 2023</div>
+                <a href="https://doi.org/10.1088/1748-9326/acf9b6" target="_blank">View Publication →</a>
+            </div>
+            
+            <div class="publication-item">
+                <div class="pub-title">A decentralized approach to model national and global food and land use systems</div>
+                <div class="pub-authors">Mosnier, Aline, Valeria Javalera-Rincon, Sarah Kate Jones, et al.</div>
+                <div class="pub-venue">Environmental Research Letters, 2023</div>
+                <a href="https://doi.org/10.1088/1748-9326/acc044" target="_blank">View Publication →</a>
+            </div>
+            
+            <p style="margin-top: 30px; text-align: center;">
+                <a href="https://sites.google.com/view/vartikasingh27?pli=1" target="_blank" style="color: #3498db; text-decoration: none; font-size: 1.1em;">
+                    View Complete Publication List →
+                </a>
+            </p>
+        </section>
+        
+        <section id="awards" class="section">
+            <h2>Awards & Recognition</h2>
+            <div class="awards-list">
+                <div class="award-item">
+                    <div class="year">2024 – Present</div>
+                    <h3>Chairperson - Workplace Committee</h3>
+                    <p>Leading workplace committee for IFPRI's South Asia Regional Office, overseeing 3 offices and more than 100 staff members.</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="year">2023</div>
+                    <h3>Early Career Research Award</h3>
+                    <p>Competitive ECR grant ($6,000) by Global to Local Analysis of Systems Sustainability (GLASSNET) program for research and collaboration.</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="year">2021 – Present</div>
+                    <h3>Guest Faculty</h3>
+                    <p>Annual Course on Understanding Public Health Nutrition organized by CCDS, Emory University and IFPRI.</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="year">2021 – 2023</div>
+                    <h3>Advisory Board Member</h3>
+                    <p>Food, Agriculture, Biodiversity, Land-Use and Energy (FABLE) Consortium.</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="year">2018</div>
+                    <h3>Community Building Award</h3>
+                    <p>IFPRI recognition for undertaking efforts beyond job description in service to the Institute.</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="year">2002</div>
+                    <h3>Merit Award</h3>
+                    <p>Amongst top 0.001% in India in Senior High School examinations.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© 2024 Dr. Vartika Singh | <a href="mailto:vartika.singh@cgiar.org" style="color: white;">vartika.singh@cgiar.org</a></p>
+        <p style="margin-top: 10px; opacity: 0.8;">Specializing in Sustainable Food Systems & Agricultural Economics</p>
+    </footer>
+</body>
+</html>
