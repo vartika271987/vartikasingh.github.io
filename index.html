@@ -17,7 +17,23 @@
             color: #333;
             background: #f8f9fa;
         }
-        
+
+        .profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+    }
+}
         .header {
             background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
             color: white;
@@ -307,6 +323,7 @@
 </head>
 <body>
     <header class="header">
+        <img src="vartikaphoto.jpg" alt="Dr. Vartika Singh" class="profile-photo">
         <h1>Dr. Vartika Singh, PhD</h1>
         <p class="subtitle">Agricultural Economist | Sustainability Researcher | Food Systems Expert</p>
         <div class="contact-links">
